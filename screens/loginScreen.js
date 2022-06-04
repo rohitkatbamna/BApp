@@ -1,26 +1,29 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 function LoginScreen({ navigation }) {
-	const [onFocuschange, setOnfocuschange] = useState(false);
 	return (
 		<KeyboardAwareScrollView>
+			<Image
+				source={require("../assets/ReactNative.png")}
+				style={styles.tinyLogo}
+			/>
 			<View style={styles.main_view}>
-				<Text style={styles.input_label}>Username</Text>
-				<TextInput placeholder="Email@example.com" style={styles.input_main} />
-				<Text style={styles.input_label}>Password</Text>
+				<Text style={styles.logIn_text}>Log In</Text>
+				<TextInput label="Username" style={styles.input_main} />
 				<TextInput
-					placeholder="*******"
 					secureTextEntry={true}
 					style={styles.input_main}
+					label="Password"
+					mode="flat"
 				/>
-				<Button
-					icon="camera"
-					mode="contained"
-					onPress={() => console.log("Pressed")}>
-					Press me
+				<Button mode="contained" style={styles.signin_button}>
+					Sign In
+				</Button>
+				<Button mode="defualt" onPress={() => console.log("Pressed")}>
+					Forget Password ?
 				</Button>
 			</View>
 		</KeyboardAwareScrollView>
@@ -29,19 +32,26 @@ function LoginScreen({ navigation }) {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-	input_label: {
-		fontSize: 25,
-		borderRadius: 5,
-		margin: "5%",
-	},
-	input_main: {
-		fontSize: 25,
-		borderWidth: 2,
-		margin: "5%",
-		borderRadius: 10,
+	tinyLogo: {
+		width: "30%",
+		height: "30%",
+		marginLeft: "auto",
+		marginRight: "auto",
+		marginTop: "10%",
 	},
 	main_view: {
-		marginTop: "40%",
+		marginTop: "8%",
+	},
+	logIn_text: {
+		textAlign: "center",
+		fontSize: 20,
+		color: "blue",
+		fontWeight: "bold",
+		marginBottom: "2%",
+	},
+	input_main: {
+		fontSize: 20,
+		margin: "3%",
 	},
 	submit_button: {
 		margin: 10,
@@ -49,5 +59,9 @@ const styles = StyleSheet.create({
 	submit_button_text: {
 		fontSize: 25,
 		borderWidth: 4,
+	},
+	signin_button: {
+		margin: "5%",
+		padding: "2%",
 	},
 });
