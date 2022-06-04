@@ -22,7 +22,11 @@ function LoginScreen({ navigation }) {
 				<Button mode="contained" style={styles.signin_button}>
 					Sign In
 				</Button>
-				<Button mode="defualt" onPress={() => console.log("Pressed")}>
+				<Button
+					mode="defualt"
+					onPress={() => {
+						navigation.navigate("ForgetPasswordScreen");
+					}}>
 					Forget Password ?
 				</Button>
 			</View>
