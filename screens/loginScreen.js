@@ -19,7 +19,12 @@ function LoginScreen({ navigation }) {
 					label="Password"
 					mode="flat"
 				/>
-				<Button mode="contained" style={styles.signin_button}>
+				<Button
+					mode="contained"
+					style={styles.signin_button}
+					onPress={() => {
+						navigation.navigate("MultipleRoleScreen");
+					}}>
 					Sign In
 				</Button>
 				<Button
@@ -33,6 +38,9 @@ function LoginScreen({ navigation }) {
 		</KeyboardAwareScrollView>
 	);
 }
+
+/* KeyboardAvoidingView Component can be used here */
+
 export default LoginScreen;
 
 const styles = StyleSheet.create({
@@ -67,5 +75,6 @@ const styles = StyleSheet.create({
 	signin_button: {
 		margin: "5%",
 		padding: "2%",
+		borderRadius: 15,
 	},
 });

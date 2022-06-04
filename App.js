@@ -1,26 +1,33 @@
+import "react-native-gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./screens/loginScreen";
 import ForgetPasswordScreen from "./screens/forgetPasswordScreen";
+import MultipleRoleScreen from "./screens/multipleRoleScreen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator defaultScreenOptions="LoginScreen">
-				<Stack.Screen
+			<Drawer.Navigator defaultScreenOptions="LoginScreen">
+				<Drawer.Screen
 					name="LoginScreen"
 					component={LoginScreen}
 					options={{ title: "" }}
 				/>
-				<Stack.Screen
+				<Drawer.Screen
 					name="ForgetPasswordScreen"
 					component={ForgetPasswordScreen}
 					options={{ title: "Forgot Password" }}
 				/>
-			</Stack.Navigator>
+				<Drawer.Screen
+					name="MultipleRoleScreen"
+					component={MultipleRoleScreen}
+					options={{ title: "" }}
+				/>
+			</Drawer.Navigator>
 		</NavigationContainer>
 	);
 }

@@ -9,7 +9,7 @@ function ForgetPasswordScreen({ navigation }) {
 			<TextInput label="Official Email" mode="flat" style={styles.input_main} />
 			<Button
 				mode="contained"
-				onPress={() => console.log("Pressed")}
+				onPress={() => navigation.navigate("LoginScreen")}
 				style={styles.button_submit}>
 				Submit
 			</Button>
@@ -17,6 +17,7 @@ function ForgetPasswordScreen({ navigation }) {
 	);
 }
 export default ForgetPasswordScreen;
+
 const styles = StyleSheet.create({
 	main_View: {
 		flex: 1,
@@ -34,5 +35,6 @@ const styles = StyleSheet.create({
 		marginLeft: "30%",
 		padding: "2%",
 		marginTop: "5%",
+		borderRadius: 15,
 	},
 });
