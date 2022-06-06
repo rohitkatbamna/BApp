@@ -12,6 +12,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Dashboard from "./dashboard";
 import StudentProfile from "./studentProfile";
 import Services from "./services";
+import Myclasses from "./myClasses";
 const Drawer = createDrawerNavigator();
 function LogoTitle() {
 	return (
@@ -47,10 +48,23 @@ function DashboardNavigation() {
 				}}
 			/>
 			<Drawer.Screen
-				name="Services"
+				name="services"
 				component={Services}
 				options={{
 					title: "Services",
+					headerRight: () => (
+						<Image
+							source={require("../assets/bell.png")}
+							style={styles.bell_icon}
+						/>
+					),
+				}}
+			/>
+			<Drawer.Screen
+				name="myclasses"
+				component={Myclasses}
+				options={{
+					title: "My Classes",
 					headerRight: () => (
 						<Image
 							source={require("../assets/bell.png")}

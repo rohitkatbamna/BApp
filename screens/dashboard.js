@@ -1,5 +1,5 @@
 import react from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 function Dashboard({ navigation }) {
 	return (
@@ -12,12 +12,20 @@ function Dashboard({ navigation }) {
 				<Text style={styles.text_bschool}>B School</Text>
 			</View>
 			<View style={styles.second_row}>
-				<View style={styles.first_column}>
+				<TouchableOpacity
+					style={styles.first_column}
+					onPress={() => {
+						navigation.navigate("services");
+					}}>
 					<Text style={styles.first_column_text}>Services</Text>
-				</View>
-				<View style={styles.second_column}>
+				</TouchableOpacity>
+				<TouchableOpacity
+					style={styles.second_column}
+					onPress={() => {
+						navigation.navigate("myclasses");
+					}}>
 					<Text style={styles.second_column_text}>My Classes</Text>
-				</View>
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
