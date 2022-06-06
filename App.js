@@ -5,29 +5,61 @@ import LoginScreen from "./screens/loginScreen";
 import ForgetPasswordScreen from "./screens/forgetPasswordScreen";
 import MultipleRoleScreen from "./screens/multipleRoleScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import DashboardNavigation from "./screens/dashboardnavigation";
 
-const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
 function App() {
 	return (
 		<NavigationContainer>
-			<Drawer.Navigator defaultScreenOptions="LoginScreen">
-				<Drawer.Screen
+			<Stack.Navigator defaultScreenOptions="LoginScreen">
+				<Stack.Screen
 					name="LoginScreen"
 					component={LoginScreen}
-					options={{ title: "" }}
+					options={{
+						title: "",
+						headerStyle: {
+							backgroundColor: "#F2F2F2",
+						},
+						headerTintColor: "#000",
+					}}
 				/>
-				<Drawer.Screen
+				<Stack.Screen
 					name="ForgetPasswordScreen"
 					component={ForgetPasswordScreen}
-					options={{ title: "Forgot Password" }}
+					options={{
+						title: "",
+						headerStyle: {
+							backgroundColor: "#F2F2F2",
+						},
+						headerTintColor: "#000",
+					}}
 				/>
-				<Drawer.Screen
+				<Stack.Screen
 					name="MultipleRoleScreen"
 					component={MultipleRoleScreen}
-					options={{ title: "" }}
+					options={{
+						title: "",
+						headerStyle: {
+							backgroundColor: "#F2F2F2",
+						},
+						headerTintColor: "#000",
+					}}
 				/>
-			</Drawer.Navigator>
+				<Stack.Screen
+					name="DashboardNavigation"
+					component={DashboardNavigation}
+					options={{
+						title: "",
+						headerStyle: {
+							backgroundColor: "#F2F2F2",
+						},
+						headerTintColor: "#000",
+						headerShown: false,
+					}}
+				/>
+			</Stack.Navigator>
 		</NavigationContainer>
 	);
 }

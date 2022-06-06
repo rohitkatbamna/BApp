@@ -9,7 +9,10 @@ function MultipleRoleScreen({ navigation }) {
 			<Button mode="contained" style={styles.button_style}>
 				Faculty
 			</Button>
-			<Button mode="contained" style={styles.button_style}>
+			<Button
+				mode="contained"
+				style={styles.button_style}
+				onPress={() => navigation.navigate("DashboardNavigation")}>
 				Admin
 			</Button>
 			<Image
