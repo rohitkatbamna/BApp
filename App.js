@@ -7,6 +7,7 @@ import MultipleRoleScreen from "./screens/multipleRoleScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DashboardNavigation from "./screens/dashboardnavigation";
+import Applyleave from "./screens/applyleave";
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +58,17 @@ function App() {
 						},
 						headerTintColor: "#000",
 						headerShown: false,
+					}}
+				/>
+				<Stack.Screen
+					name="applyleave"
+					component={Applyleave}
+					options={{
+						title: "",
+						headerStyle: {
+							backgroundColor: "#F2F2F2",
+						},
+						headerTintColor: "#000",
 					}}
 				/>
 			</Stack.Navigator>

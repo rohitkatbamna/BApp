@@ -1,25 +1,29 @@
 import react from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
-function Services() {
+function Services({ navigation }) {
 	return (
 		<View style={styles.main_view}>
 			<View style={styles.main_row}>
-				<View style={styles.view_block}>
+				<TouchableOpacity
+					style={styles.view_block}
+					onPress={() => {
+						navigation.navigate("applyleave");
+					}}>
 					<Text style={styles.column_text}>Apply Leave</Text>
-				</View>
-				<View style={styles.view_block}>
+				</TouchableOpacity>
+				<TouchableOpacity style={styles.view_block}>
 					<Text style={styles.column_text}>Pay Fee</Text>
-				</View>
-				<View style={styles.view_block}>
+				</TouchableOpacity>
+				<TouchableOpacity style={styles.view_block}>
 					<Text style={styles.column_text}>Course Registration</Text>
-				</View>
-				<View style={styles.view_block}>
+				</TouchableOpacity>
+				<TouchableOpacity style={styles.view_block}>
 					<Text style={styles.column_text}>Virtual Classroom</Text>
-				</View>
-				<View style={styles.view_block}>
+				</TouchableOpacity>
+				<TouchableOpacity style={styles.view_block}>
 					<Text style={styles.column_text}>Learning Hub</Text>
-				</View>
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
