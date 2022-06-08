@@ -52,18 +52,21 @@ function App() {
 						headerTintColor: "#000",
 					}}
 				/>
-				<Stack.Screen
-					name="DashboardNavigation"
-					component={DashboardNavigation}
-					options={{
-						title: "",
-						headerStyle: {
-							backgroundColor: "#F2F2F2",
-						},
-						headerTintColor: "#000",
-						headerShown: false,
-					}}
-				/>
+				{/*
+					<Stack.Screen
+						name="DashboardNavigation"
+						component={DashboardNavigation}
+						options={{
+							title: "",
+							headerStyle: {
+								backgroundColor: "#F2F2F2",
+							},
+							headerTintColor: "#000",
+							headerShown: false,
+						}}
+					/>
+					*/}
+
 				<Stack.Screen
 					name="applyleave"
 					component={Applyleave}

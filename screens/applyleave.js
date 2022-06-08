@@ -7,8 +7,17 @@ import {
 	Image,
 	TouchableOpacity,
 } from "react-native";
+
+{
+	/*
 import DateTimePicker from "@react-native-community/datetimepicker";
 
+ USE OF THIS IS WIREDLY FOOLISH IT WORKS BUT YOU HAVE TO JUMPS TO LOOP OF CONNECT PICKER FILES FROM THE PICKER ANDROID AND MAKE IT RIGHT UNTILL THE ERROR GOES ALWAY. 
+ USE THIS WISELY 
+ ERROR AND OTHER STUFF ARE VERY PROBLEMATIC
+ CHECK YOUR MIND HERE.
+*/
+}
 function ApplyLeave() {
 	const [date, setDate] = useState(new Date());
 	const [mode, setMode] = useState("date");
@@ -51,7 +60,7 @@ function ApplyLeave() {
 					/>
 				</TouchableOpacity>
 			</View>
-			{show && (
+			{/* show && (
 				<DateTimePicker
 					testID="dateTimePicker"
 					value={date}
@@ -60,7 +69,8 @@ function ApplyLeave() {
 					onChange={onChange}
 					style={styles.date_time_picker}
 				/>
-			)}
+			)
+			*/}
 			<Text>{date.toDateString()}</Text>
 			<Text>{date.toTimeString()}</Text>
 		</>
