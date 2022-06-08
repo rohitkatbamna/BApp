@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import * as Progress from "react-native-progress";
 
 function LoginScreen({ navigation }) {
 	return (

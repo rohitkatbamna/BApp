@@ -12,13 +12,25 @@ function Services({ navigation }) {
 					}}>
 					<Text style={styles.column_text}>Apply Leave</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.view_block}>
+				<TouchableOpacity
+					style={styles.view_block}
+					onPress={() => {
+						navigation.navigate("payfees");
+					}}>
 					<Text style={styles.column_text}>Pay Fee</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.view_block}>
+				<TouchableOpacity
+					style={styles.view_block}
+					onPress={() => {
+						navigation.navigate("courseregistration");
+					}}>
 					<Text style={styles.column_text}>Course Registration</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.view_block}>
+				<TouchableOpacity
+					style={styles.view_block}
+					onPress={() => {
+						navigation.navigate("virtualclassroom");
+					}}>
 					<Text style={styles.column_text}>Virtual Classroom</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.view_block}>

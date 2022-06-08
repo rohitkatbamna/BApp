@@ -13,7 +13,7 @@ import Dashboard from "./dashboard";
 import StudentProfile from "./studentProfile";
 import Services from "./services";
 import Myclasses from "./myClasses";
-import ServicesNavigation from "./servicesnavigation";
+
 const Drawer = createDrawerNavigator();
 function LogoTitle() {
 	return (
