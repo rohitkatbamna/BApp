@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Platform } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import * as Progress from "react-native-progress";
 
 function LoginScreen({ navigation }) {
 	return (
-		<KeyboardAwareScrollView>
+		<KeyboardAwareScrollView style={styles.big_view}>
 			<Image
 				source={require("../assets/ReactNative.png")}
 				style={styles.tinyLogo}
@@ -77,5 +77,9 @@ const styles = StyleSheet.create({
 		margin: "5%",
 		padding: "2%",
 		borderRadius: 15,
+	},
+	big_view: {
+		width: Platform.OS === "web" ? "40%" : "100%",
+		height: Platform.OS === "web" ? "50%" : "100%",
 	},
 });

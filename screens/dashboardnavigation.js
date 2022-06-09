@@ -13,6 +13,7 @@ import Dashboard from "./dashboard";
 import StudentProfile from "./studentProfile";
 import Services from "./services";
 import Myclasses from "./myClasses";
+import { FontAwesome } from "@expo/vector-icons";
 
 const Drawer = createDrawerNavigator();
 function LogoTitle() {
@@ -40,10 +41,7 @@ function DashboardNavigation() {
 				component={Dashboard}
 				options={{
 					headerRight: () => (
-						<Image
-							source={require("../assets/bell.png")}
-							style={styles.bell_icon}
-						/>
+						<FontAwesome name="bell" size={24} color="black" />
 					),
 					title: "Dashboard",
 				}}
@@ -54,10 +52,7 @@ function DashboardNavigation() {
 				options={{
 					title: "Services",
 					headerRight: () => (
-						<Image
-							source={require("../assets/bell.png")}
-							style={styles.bell_icon}
-						/>
+						<FontAwesome name="bell" size={24} color="black" />
 					),
 				}}
 			/>
@@ -67,10 +62,7 @@ function DashboardNavigation() {
 				options={{
 					title: "My Classes",
 					headerRight: () => (
-						<Image
-							source={require("../assets/bell.png")}
-							style={styles.bell_icon}
-						/>
+						<FontAwesome name="bell" size={24} color="black" />
 					),
 				}}
 			/>

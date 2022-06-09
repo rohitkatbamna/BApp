@@ -6,17 +6,17 @@ import {
 	StyleSheet,
 	Image,
 	TouchableOpacity,
+	Platform,
 } from "react-native";
 
+import DateTimePicker from "@react-native-community/datetimepicker";
 {
 	/*
-import DateTimePicker from "@react-native-community/datetimepicker";
+ USE OF THIS IS WIREDLY FOOLISH IT WORKS BUT YOU HAVE TO JUMPS TO LOOP OF CONNECT PICKER FILES FROM THE PICKER ANDROID AND MAKE IT RIGHT UNTILL THE ERROR GOES ALWAY. USE THIS WISELY ERROR AND OTHER STUFF ARE VERY PROBLEMATIC CHECK YOUR MIND HERE.
 
- USE OF THIS IS WIREDLY FOOLISH IT WORKS BUT YOU HAVE TO JUMPS TO LOOP OF CONNECT PICKER FILES FROM THE PICKER ANDROID AND MAKE IT RIGHT UNTILL THE ERROR GOES ALWAY. 
- USE THIS WISELY 
- ERROR AND OTHER STUFF ARE VERY PROBLEMATIC
- CHECK YOUR MIND HERE.
-*/
+ THIS ERROR AND OCARNACE DOES NOT MAKE SENSE CONSIDERING THAT DATE TIME PCIKER SHOULD TAKE STUFF AUTOMATICALY FROM IOS OR ANDROID.
+
+   */
 }
 function ApplyLeave() {
 	const [date, setDate] = useState(new Date());
@@ -41,6 +41,15 @@ function ApplyLeave() {
 	const showTimepicker = () => {
 		showMode("time");
 	};
+	if (Platform.OS === "web") {
+		return (
+			<>
+				<div style={{ margin: "10%" }}>
+					<input type="date" style={{}} />
+				</div>
+			</>
+		);
+	}
 
 	return (
 		<>
@@ -60,7 +69,7 @@ function ApplyLeave() {
 					/>
 				</TouchableOpacity>
 			</View>
-			{/* show && (
+			{show && (
 				<DateTimePicker
 					testID="dateTimePicker"
 					value={date}
@@ -69,8 +78,8 @@ function ApplyLeave() {
 					onChange={onChange}
 					style={styles.date_time_picker}
 				/>
-			)
-			*/}
+			)}
+
 			<Text>{date.toDateString()}</Text>
 			<Text>{date.toTimeString()}</Text>
 		</>
@@ -80,7 +89,7 @@ const styles = StyleSheet.create({
 	main_view: {
 		display: "flex",
 		flexDirection: "row",
-		justifyContent: "space-around",
+		justifyContent: "center",
 	},
 	calender_icon_size: {
 		height: 20,
@@ -95,10 +104,16 @@ const styles = StyleSheet.create({
 		borderWidth: 2,
 		marginTop: "5%",
 		justifyContent: "space-between",
+		paddingVertical: "5%",
+		paddingHorizontal: "2%",
+		borderRadius: 20,
 	},
 	date_time_picker: {
-		marginRight: 100,
+		marginRight: "10%",
 		width: "100%",
+	},
+	cut_me: {
+		margin: "50%",
 	},
 });
 
