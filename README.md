@@ -25,3 +25,7 @@
 - api will always contain fetch api files.
 
 ## the sturture will change further if their is more stuff like Context api.
+
+# JavaScript files that hold anything will always be camelcasing
+
+# react components will always have two capital word this will be decided further.
