@@ -41,7 +41,12 @@ function DashboardNavigation() {
 				component={Dashboard}
 				options={{
 					headerRight: () => (
-						<FontAwesome name="bell" size={24} color="black" />
+						<FontAwesome
+							name="bell"
+							size={24}
+							color="black"
+							style={styles.bell_icon}
+						/>
 					),
 					title: "Dashboard",
 				}}
@@ -72,12 +77,7 @@ function DashboardNavigation() {
 
 const styles = StyleSheet.create({
 	bell_icon: {
-		height: "90%",
-		width: "30%",
-		marginTop: "1%",
-		marginRight: "5%",
-		marginBottom: "5%",
-		paddingBottom: "5%",
+		marginRight: "10%",
 	},
 	image_style: {
 		width: 75,

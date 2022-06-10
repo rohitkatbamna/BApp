@@ -1,14 +1,26 @@
 import react from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+	View,
+	Text,
+	StyleSheet,
+	Image,
+	TouchableOpacity,
+	Platform,
+} from "react-native";
+import reactimage from "../assets/ReactNative.png";
 
 function Dashboard({ navigation }) {
 	return (
 		<View style={styles.main_view}>
 			<View style={styles.first_row}>
-				<Image
-					source={require("../assets/ReactNative.png")}
-					style={styles.tinyLogo}
-				/>
+				{Platform.OS === "web" ? (
+					<img src={reactimage} style={{ width: "20%", margin: "auto" }} />
+				) : (
+					<Image
+						source={require("../assets/ReactNative.png")}
+						style={styles.tinyLogo}
+					/>
+				)}
 				<Text style={styles.text_bschool}>B School</Text>
 			</View>
 			<View style={styles.second_row}>
@@ -35,12 +47,16 @@ const styles = StyleSheet.create({
 	main_view: {
 		flex: 1,
 		marginTop: "4%",
+		width: Platform.OS === "web" ? "50%" : "100%",
+		marginRight: "auto",
+		marginLeft: "auto",
 	},
 	first_row: {
 		flex: 0.7,
 		borderWidth: 5,
 		marginLeft: "3%",
 		marginRight: "3%",
+		borderRadius: 10,
 	},
 	tinyLogo: {
 		height: "70%",
@@ -67,6 +83,12 @@ const styles = StyleSheet.create({
 		width: "45%",
 		height: "45%",
 		borderWidth: 3,
+		borderRadius: 10,
+		shadowColor: "#000",
+		shadowOffset: { width: 2, height: 2 },
+		shadowOpacity: 0.5,
+		shadowRadius: 2,
+		elevation: 2,
 	},
 	first_column_text: {
 		fontWeight: "bold",
@@ -79,6 +101,12 @@ const styles = StyleSheet.create({
 		width: "45%",
 		height: "45%",
 		borderWidth: 3,
+		borderRadius: 10,
+		shadowColor: "#000",
+		shadowOffset: { width: 2, height: 2 },
+		shadowOpacity: 0.5,
+		shadowRadius: 2,
+		elevation: 2,
 	},
 	second_column_text: {
 		fontWeight: "bold",

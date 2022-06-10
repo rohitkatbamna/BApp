@@ -8,7 +8,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DashboardNavigation from "./screens/dashboardnavigation";
 import Applyleave from "./screens/applyleave";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, Platform } from "react-native";
 import PayFees from "./screens/payFees";
 import CourseRegistration from "./screens/courseRegistration";
 import VirtualClassroom from "./screens/virtualClassroom";
@@ -28,6 +28,7 @@ function App() {
 							backgroundColor: "#F2F2F2",
 						},
 						headerTintColor: "#000",
+						headerShown: false,
 					}}
 				/>
 				<Stack.Screen

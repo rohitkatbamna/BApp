@@ -1,10 +1,20 @@
 import react from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import {
+	View,
+	StyleSheet,
+	Text,
+	Image,
+	Platform,
+	useWindowDimensions,
+} from "react-native";
 import { Button } from "react-native-paper";
 
+import fastforward from "../assets/fastforward.png";
+
 function MultipleRoleScreen({ navigation }) {
+	const window = useWindowDimensions();
 	return (
-		<View style={styles.main_View}>
+		<View>
 			<Text style={styles.selectRole_Text}>Select Role</Text>
 			<Button mode="contained" style={styles.button_style}>
 				Faculty
@@ -15,20 +25,29 @@ function MultipleRoleScreen({ navigation }) {
 				onPress={() => navigation.navigate("DashboardNavigation")}>
 				Admin
 			</Button>
-			<Image
-				source={require("../assets/fastforward.png")}
-				style={styles.fast_forward}
-			/>
+			{Platform.OS === "web" ? (
+				<img
+					src={fastforward}
+					style={{ width: "50%", margin: "auto", height: "50%" }}
+				/>
+			) : (
+				<Image
+					source={require("../assets/fastforward.png")}
+					style={styles.fast_forward}
+				/>
+			)}
 		</View>
 	);
 }
 export default MultipleRoleScreen;
 const styles = StyleSheet.create({
 	main_View: {
-		flex: 1,
+		flex: Platform.OS === "web" ? 0.5 : 1,
+		width: Platform.OS === "web" ? "50%" : "100%",
+		marginRight: "auto",
+		marginLeft: "auto",
 	},
 	selectRole_Text: {
-		fontSize: 20,
 		fontWeight: "bold",
 		textAlign: "center",
 		marginTop: "5%",

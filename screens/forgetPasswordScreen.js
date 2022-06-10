@@ -1,5 +1,5 @@
 import react from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Platform } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 
 function ForgetPasswordScreen({ navigation }) {
@@ -20,7 +20,10 @@ export default ForgetPasswordScreen;
 
 const styles = StyleSheet.create({
 	main_View: {
-		flex: 1,
+		flex: Platform.OS === "web" ? 0.5 : 1,
+		width: Platform.OS === "web" ? "50%" : "100%",
+		marginRight: "auto",
+		marginLeft: "auto",
 	},
 	forgetPassord_Text: {
 		textAlign: "center",
