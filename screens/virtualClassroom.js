@@ -1,62 +1,39 @@
-import react, { useRef } from "react";
+import react, { useState } from "react";
 import { Text, View } from "react-native";
 
-import DropDown from "react-native-paper-dropdown";
+import { Button, Menu, Divider, Provider } from "react-native-paper";
 
-function VirtualClassroom() {
-	const [nightMode, setNightmode] = useState(false);
-	const [showDropDown, setShowDropDown] = useState(false);
-	const [gender, setGender] = useState < string > "";
-	const [showMultiSelectDropDown, setShowMultiSelectDropDown] = useState(false);
-	const [colors, setColors] = useState < string > "";
-	const genderList = [
-		{
-			label: "Male",
-			value: "male",
-		},
-		{
-			label: "Female",
-			value: "female",
-		},
-		{
-			label: "Others",
-			value: "others",
-		},
-	];
-	const colorList = [
-		{
-			label: "White",
-			value: "white",
-		},
-		{
-			label: "Red",
-			value: "red",
-		},
-		{
-			label: "Blue",
-			value: "blue",
-		},
-		{
-			label: "Green",
-			value: "green",
-		},
-		{
-			label: "Orange",
-			value: "orange",
-		},
-	];
-
+function DropDownmenu() {
+	const [visible, setVisible] = useState(false);
+	const openMenu = () => setVisible(true);
+	const closeMenu = () => setVisible(false);
 	return (
-		<DropDown
-			label={"Gender"}
-			mode={"outlined"}
-			visible={showDropDown}
-			showDropDown={() => setShowDropDown(true)}
-			onDismiss={() => setShowDropDown(false)}
-			value={gender}
-			setValue={setGender}
-			list={genderList}
-		/>
+		<Provider>
+			<View
+				style={{
+					flexDirection: "row",
+					justifyContent: "center",
+				}}>
+				<Menu
+					visible={visible}
+					onDismiss={closeMenu}
+					anchor={<Button onPress={openMenu}>Show Course</Button>}>
+					<Menu.Item onPress={() => {}} title="Item 1" />
+					<Menu.Item onPress={() => {}} title="Item 2" />
+					<Divider />
+					<Menu.Item onPress={() => {}} title="Item 3" />
+				</Menu>
+			</View>
+		</Provider>
+	);
+}
+function VirtualClassroom() {
+	return (
+		<>
+			<DropDownmenu />
+			<DropDownmenu />
+			<DropDownmenu />
+		</>
 	);
 }
 export default VirtualClassroom;

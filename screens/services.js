@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 	},
 	view_block: {
-		width: Platform.OS === "web" ? "30%" : "100%",
+		width: Platform.OS === "web" ? "30%" : "45%",
 		marginRight: "auto",
 		marginLeft: "auto",
 		height: "45%",

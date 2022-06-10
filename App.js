@@ -12,15 +12,21 @@ import { SafeAreaView, Platform } from "react-native";
 import PayFees from "./screens/payFees";
 import CourseRegistration from "./screens/courseRegistration";
 import VirtualClassroom from "./screens/virtualClassroom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import AlertsNotices from "./screens/alertsNotices";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator defaultScreenOptions="LoginScreen">
+			<Stack.Navigator
+				defaultScreenOptions="LoginScreen"
+				screenOptions={{
+					headerStyle: {
+						backgroundColor: "#F2F2F2",
+					},
+					headerTintColor: "#000",
+				}}>
 				<Stack.Screen
 					name="LoginScreen"
 					component={LoginScreen}
@@ -107,6 +113,17 @@ function App() {
 					component={VirtualClassroom}
 					options={{
 						title: "Virtual Classroom",
+						headerStyle: {
+							backgroundColor: "#F2F2F2",
+						},
+						headerTintColor: "#000",
+					}}
+				/>
+				<Stack.Screen
+					name="alertsnotices"
+					component={AlertsNotices}
+					options={{
+						title: "Alerts & Notices",
 						headerStyle: {
 							backgroundColor: "#F2F2F2",
 						},

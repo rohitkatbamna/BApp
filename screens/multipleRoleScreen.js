@@ -31,22 +31,20 @@ function MultipleRoleScreen({ navigation }) {
 			</div>
 		);
 	}
-	const MobileScreen = (
-		<>
-			<Button
-				icon="camera"
-				mode="contained"
-				onPress={() => console.log("Pressed")}>
-				Press me
-			</Button>
-			<Button
-				icon="camera"
-				mode="contained"
-				onPress={() => console.log("Pressed")}>
-				Press me
-			</Button>
-		</>
-	);
+	function MobileScreen() {
+		return (
+			<>
+				<Button
+					mode="contained"
+					onPress={() => navigation.navigate("DashboardNavigation")}>
+					Press me
+				</Button>
+				<Button mode="contained" onPress={() => console.log("Admin")}>
+					Press me
+				</Button>
+			</>
+		);
+	}
 	return <>{Platform.OS === "web" ? <WebScreen /> : <MobileScreen />}</>;
 }
 export default MultipleRoleScreen;

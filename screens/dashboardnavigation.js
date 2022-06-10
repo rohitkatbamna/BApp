@@ -14,6 +14,7 @@ import StudentProfile from "./studentProfile";
 import Services from "./services";
 import Myclasses from "./myClasses";
 import { FontAwesome } from "@expo/vector-icons";
+import PaymentHistory from "./paymentHistory";
 
 const Drawer = createDrawerNavigator();
 function LogoTitle() {
@@ -28,7 +29,7 @@ function LogoTitle() {
 		</View>
 	);
 }
-function DashboardNavigation() {
+function DashboardNavigation({ navigation }) {
 	return (
 		<Drawer.Navigator initialRouteName="Dashboard">
 			<Drawer.Screen
@@ -46,6 +47,7 @@ function DashboardNavigation() {
 							size={24}
 							color="black"
 							style={styles.bell_icon}
+							onPress={() => navigation.navigate("alertsnotices")}
 						/>
 					),
 					title: "Dashboard",
@@ -62,6 +64,7 @@ function DashboardNavigation() {
 							size={24}
 							color="black"
 							style={styles.bell_icon}
+							onPress={() => navigation.navigate("alertsnotices")}
 						/>
 					),
 				}}
@@ -77,6 +80,23 @@ function DashboardNavigation() {
 							size={24}
 							color="black"
 							style={styles.bell_icon}
+							onPress={() => navigation.navigate("alertsnotices")}
+						/>
+					),
+				}}
+			/>
+			<Drawer.Screen
+				name="paymenthistory"
+				component={PaymentHistory}
+				options={{
+					title: "Payment History",
+					headerRight: () => (
+						<FontAwesome
+							name="bell"
+							size={24}
+							color="black"
+							style={styles.bell_icon}
+							onPress={() => navigation.navigate("alertsnotices")}
 						/>
 					),
 				}}

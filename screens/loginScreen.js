@@ -1,5 +1,7 @@
 import react from "react";
 import imageReact from "../assets/ReactNative.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function LoginScreen({ navigation }) {
 	const inputStyle = {};
@@ -25,7 +27,8 @@ function LoginScreen({ navigation }) {
 				onClick={() => {
 					navigation.navigate("MultipleRoleScreen");
 				}}
-				style={{ marginTop: "2vw" }}>
+				style={{ marginTop: "2vw" }}
+				className="btn btn-primary">
 				Sign In
 			</button>
 		</div>
