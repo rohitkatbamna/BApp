@@ -57,7 +57,12 @@ function DashboardNavigation() {
 				options={{
 					title: "Services",
 					headerRight: () => (
-						<FontAwesome name="bell" size={24} color="black" />
+						<FontAwesome
+							name="bell"
+							size={24}
+							color="black"
+							style={styles.bell_icon}
+						/>
 					),
 				}}
 			/>
@@ -67,7 +72,12 @@ function DashboardNavigation() {
 				options={{
 					title: "My Classes",
 					headerRight: () => (
-						<FontAwesome name="bell" size={24} color="black" />
+						<FontAwesome
+							name="bell"
+							size={24}
+							color="black"
+							style={styles.bell_icon}
+						/>
 					),
 				}}
 			/>

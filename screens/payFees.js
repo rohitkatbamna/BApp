@@ -1,5 +1,11 @@
 import react from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+	View,
+	Text,
+	StyleSheet,
+	TouchableOpacity,
+	Platform,
+} from "react-native";
 
 function PayFees() {
 	return (
@@ -43,9 +49,12 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 	},
 	main_view: {
-		margin: "5%",
+		width: Platform.OS === "web" ? "50%" : "100%",
+		marginRight: "auto",
+		marginLeft: "auto",
 	},
 	pay_now: {
+		borderRadius: 5,
 		borderWidth: 3,
 		width: "30%",
 		backgroundColor: "lightblue",
@@ -53,7 +62,11 @@ const styles = StyleSheet.create({
 		marginLeft: "auto",
 		marginTop: "5%",
 		padding: "3%",
-		elevation: 100,
+		shadowColor: "#000",
+		shadowOffset: { width: 2, height: 2 },
+		shadowOpacity: 0.5,
+		shadowRadius: 2,
+		elevation: 2,
 	},
 });
 

@@ -12,6 +12,8 @@ import { SafeAreaView, Platform } from "react-native";
 import PayFees from "./screens/payFees";
 import CourseRegistration from "./screens/courseRegistration";
 import VirtualClassroom from "./screens/virtualClassroom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const Stack = createNativeStackNavigator();
 

@@ -1,5 +1,11 @@
 import react from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import {
+	Text,
+	View,
+	StyleSheet,
+	TouchableOpacity,
+	Platform,
+} from "react-native";
 
 function Services({ navigation }) {
 	return (
@@ -45,6 +51,7 @@ const styles = StyleSheet.create({
 	main_view: {
 		marginTop: "4%",
 		flex: 1,
+		flexWrap: "wrap",
 	},
 	main_row: {
 		flex: 0.5,
@@ -63,9 +70,17 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 	},
 	view_block: {
-		width: "45%",
+		width: Platform.OS === "web" ? "30%" : "100%",
+		marginRight: "auto",
+		marginLeft: "auto",
 		height: "45%",
 		borderWidth: 3,
 		marginTop: "5%",
+		borderRadius: 10,
+		shadowColor: "#000",
+		shadowOffset: { width: 2, height: 2 },
+		shadowOpacity: 0.5,
+		shadowRadius: 2,
+		elevation: 2,
 	},
 });

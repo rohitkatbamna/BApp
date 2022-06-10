@@ -8,36 +8,46 @@ import {
 	useWindowDimensions,
 } from "react-native";
 import { Button } from "react-native-paper";
-
 import fastforward from "../assets/fastforward.png";
 
 function MultipleRoleScreen({ navigation }) {
 	const window = useWindowDimensions();
-	return (
-		<View>
-			<Text style={styles.selectRole_Text}>Select Role</Text>
-			<Button mode="contained" style={styles.button_style}>
-				Faculty
+	function WebScreen() {
+		return (
+			<div className="text-center">
+				<button className="btn btn-primary mt-5">Admin</button>
+				<br />
+				<button
+					className="btn btn-primary mt-5"
+					onClick={() => {
+						navigation.navigate("DashboardNavigation");
+					}}>
+					Faculty
+				</button>
+				<br className="mt-5" />
+				<div className="mt-5">
+					<img src={fastforward} height="10%" width="5%" />
+				</div>
+			</div>
+		);
+	}
+	const MobileScreen = (
+		<>
+			<Button
+				icon="camera"
+				mode="contained"
+				onPress={() => console.log("Pressed")}>
+				Press me
 			</Button>
 			<Button
+				icon="camera"
 				mode="contained"
-				style={styles.button_style}
-				onPress={() => navigation.navigate("DashboardNavigation")}>
-				Admin
+				onPress={() => console.log("Pressed")}>
+				Press me
 			</Button>
-			{Platform.OS === "web" ? (
-				<img
-					src={fastforward}
-					style={{ width: "50%", margin: "auto", height: "50%" }}
-				/>
-			) : (
-				<Image
-					source={require("../assets/fastforward.png")}
-					style={styles.fast_forward}
-				/>
-			)}
-		</View>
+		</>
 	);
+	return <>{Platform.OS === "web" ? <WebScreen /> : <MobileScreen />}</>;
 }
 export default MultipleRoleScreen;
 const styles = StyleSheet.create({

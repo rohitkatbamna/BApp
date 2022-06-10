@@ -9,7 +9,7 @@ import {
 	Platform,
 } from "react-native";
 
-import DateTimePicker from "@react-native-community/datetimepicker";
+// import DateTimePicker from "@react-native-community/datetimepicker";
 {
 	/*
  USE OF THIS IS WIREDLY FOOLISH IT WORKS BUT YOU HAVE TO JUMPS TO LOOP OF CONNECT PICKER FILES FROM THE PICKER ANDROID AND MAKE IT RIGHT UNTILL THE ERROR GOES ALWAY. USE THIS WISELY ERROR AND OTHER STUFF ARE VERY PROBLEMATIC CHECK YOUR MIND HERE.
@@ -44,8 +44,27 @@ function ApplyLeave() {
 	if (Platform.OS === "web") {
 		return (
 			<>
-				<div style={{ margin: "10%" }}>
-					<input type="date" style={{}} />
+				<div className="ms-auto me-auto d-flex align-items-center justify-content-evenly mt-5">
+					<div className="d-flex">
+						<p className="fs-5 align-self-center">From</p>
+						<input type="date" />
+					</div>
+					<div className="d-flex ms-5">
+						<p className="fs-5 align-self-center">To</p>
+						<input type="date" />
+					</div>
+				</div>
+				<br />
+				<div className="d-flex ms-auto me-auto">
+					<p>Leave</p>
+					<p className="ms-4">OD</p>
+				</div>
+				<div style={{ width: "50%" }} className="ms-auto me-auto">
+					<div class="input-group ms-auto me-auto">
+						<textarea
+							class="form-control"
+							aria-label="With textarea"></textarea>
+					</div>
 				</div>
 			</>
 		);
@@ -53,8 +72,10 @@ function ApplyLeave() {
 
 	return (
 		<>
+			{/*  
 			<View style={styles.main_view}>
-				<TouchableOpacity style={styles.button_image} onPress={showDatepicker}>
+
+				 <TouchableOpacity style={styles.button_image} onPress={showDatepicker}>
 					<Text>From</Text>
 					<Image
 						source={require("../assets/calendar.png")}
@@ -81,7 +102,7 @@ function ApplyLeave() {
 			)}
 
 			<Text>{date.toDateString()}</Text>
-			<Text>{date.toTimeString()}</Text>
+			<Text>{date.toTimeString()}</Text> */}
 		</>
 	);
 }
